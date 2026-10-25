@@ -1,0 +1,16 @@
+export type Task={id:string;title:string;description:string;dueDate:string;priority:'Low'|'Medium'|'High';category:string;completed:boolean;createdAt:string;updatedAt:string};
+export type Expense={id:string;amount:number;date:string;category:string;notes:string;createdAt:string};
+export type ShoppingItem={id:string;name:string;quantity:string;category:string;purchased:boolean;createdAt:string};
+export type LearningGoal={id:string;title:string;startDate?:string;endDate?:string;weekdayHours?:number;weekendHours?:number;targetDate?:string;createdAt:string};
+export type LearningTopic={id:string;goalId:string;title:string;status:'Not Started'|'In Progress'|'Completed';notes:string;estimatedHours?:number;estimateManual?:boolean};
+export type Reminder={id:string;title:string;description:string;dateTime:string;completed:boolean;createdAt:string;repeat?:'none'|'daily'|'weekly'|'monthly'|'yearly';repeatDayOfMonth?:number;repeatMonth?:number};
+export type StickyNote={id:string;title:string;content:string;color:string;pinned:boolean;createdAt:string;updatedAt:string};
+export type JobStage='Applied'|'Call Received'|'Email Received'|'First Round'|'Second Round'|'HR Round'|'Waiting for Response'|'Offer Received'|'Rejected'|'Withdrawn'|'Closed';
+export type JobApplication={id:string;companyName:string;jobTitle:string;jobDescription:string;jobUrl:string;applicationDate:string;source:string;currentStage:JobStage;priority:'Low'|'Medium'|'High';expectedSalary:string;offeredSalary:string;currency:string;location:string;notes:string;nextFollowUpDate:string;nextInterviewDate:string;createdAt:string;updatedAt:string};
+export type JobContact={id:string;applicationId:string;name:string;role:string;phone:string;emailAddresses:string[];notes:string;createdAt:string;updatedAt:string};
+export type JobActivity={id:string;applicationId:string;contactId?:string;type:string;subject:string;eventDate:string;notes:string;gmailLinkId?:string;createdAt:string;updatedAt:string};
+export type JobEmailLink={id:string;applicationId:string;contactId?:string;url:string;subject:string;sender:string;recipient:string;emailDate:string;category:string;accountLabel:string;notes:string;createdAt:string;updatedAt:string};
+export type JobInterview={id:string;applicationId:string;roundName:string;interviewType:string;scheduledAt:string;timeZone:string;interviewer:string;meetingUrl:string;status:string;notes:string;feedback:string;createdAt:string;updatedAt:string};
+export type JobFollowUp={id:string;applicationId:string;contactId?:string;dueAt:string;type:string;notes:string;completedAt?:string;outcome?:string;createdAt:string;updatedAt:string};
+export type Settings={id:string;theme:'light'|'dark';currency:string};
+export type Store={tasks:Task[];expenses:Expense[];shoppingItems:ShoppingItem[];learningGoals:LearningGoal[];learningTopics:LearningTopic[];reminders:Reminder[];stickyNotes:StickyNote[];jobApplications:JobApplication[];jobContacts:JobContact[];jobActivities:JobActivity[];jobEmailLinks:JobEmailLink[];jobInterviews:JobInterview[];jobFollowUps:JobFollowUp[];settings:Settings};
